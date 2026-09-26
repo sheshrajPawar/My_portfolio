@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheshraj Pawar | Data Engineer & Scientist</title>
+  <meta
+    name="description"
+    content="Portfolio of Sheshraj Pawar, Data Engineer and Scientist. Data pipelines, machine learning, and AI architecture."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --bg-soft: #e8e2d6;
+      --paper: #fbf8f2;
+      --ink: #1c1915;
+      --muted: #5e574c;
+      --faint: #8a8174;
+      --navy: #1c3348;
+      --navy-soft: #2a4a66;
+      --brass: #6e532c;
+      --line: #d9d1c3;
+      --line-strong: #c4b8a4;
+      --card: #fffcf7;
+      --shadow: 0 1px 0 rgba(28, 25, 21, 0.04);
+      --max-width: 1080px;
+      --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+      --font-display: "Libre Baskerville", Georgia, serif;
+      --transition: 0.2s ease;
+    }
+
+    [data-theme="dark"] {
+      --bg: #141210;
+      --bg-soft: #1c1916;
+      --paper: #1a1714;
+      --ink: #f4efe6;
+      --muted: #c8bfb2;
+      --faint: #9a9084;
+      --navy: #e7d3b1;
+      --navy-soft: #f4efe6;
+      --brass: #d4b483;
+      --line: #3a342c;
+      --line-strong: #52493e;
+      --card: #201c18;
+      --shadow: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 168px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background:
+        linear-gradient(180deg, rgba(110, 83, 44, 0.05), transparent 220px),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section,
+    .hero {
+      scroll-margin-top: 220px;
+    }
+
+    .section {
+      padding: 84px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
+      background: var(--navy);
+      color: var(--paper);
+      padding: 10px 14px;
+      z-index: 1000;
+    }
+
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .masthead-bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "brand actions"
+        "nav nav";
+      align-items: center;
+      gap: 10px 16px;
+      padding: 14px 0 12px;
+    }
+
+    .masthead nav {
+      grid-area: nav;
+    }
+
+    .nav-actions {
+      grid-area: actions;
+    }
+
+    .wordmark {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      grid-area: brand;
+    }
+
+    .wordmark span {
+      color: var(--brass);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+      border-bottom-color: var(--brass);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      grid-area: actions;
+    }
+
+    .theme-toggle,
+    .resume-nav-btn,
+    .social-btn {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 2px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .theme-toggle {
+      width: 40px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .resume-nav-btn,
+    .social-btn {
+      padding: 0 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .theme-toggle:hover,
+    .resume-nav-btn:hover,
+    .social-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .hero {
+      padding: 72px 0 64px;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(3rem, 6.4vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .hero-rule {
+      width: 72px;
+      height: 2px;
+      background: var(--brass);
+      margin-bottom: 22px;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 68ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .cta-btn {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .primary-btn {
+      background: var(--navy);
+      color: var(--paper);
+      border-color: var(--navy);
+    }
+
+    [data-theme="dark"] .primary-btn {
+      color: #1c1915;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .cta-btn:hover {
+      background: var(--navy-soft);
+      border-color: var(--navy-soft);
+      color: var(--paper);
+    }
+
+    [data-theme="dark"] .cta-btn:hover {
+      color: #1c1915;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .highlight-item {
+      padding: 18px 18px 18px 0;
+    }
+
+    .highlight-item + .highlight-item {
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .highlight-label {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--brass);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+    }
+
+    .highlight-value {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      line-height: 1.4;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      margin-bottom: 36px;
+      align-items: start;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      padding-top: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p:last-child {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-image {
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      padding: 8px;
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: grayscale(18%);
+    }
+
+    .edu-badge {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .about-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin: 8px 0 22px;
+      padding-top: 8px;
+    }
+
+    .about-pill {
+      font-size: 0.92rem;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .about-pill::before {
+      content: "·";
+      color: var(--brass);
+      margin-right: 8px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .stat-card {
+      padding: 16px 12px 0 0;
+    }
+
+    .stat-card + .stat-card {
+      padding-left: 16px;
+      border-left: 1px solid var(--line);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+    }
+
+    .skill-card {
+      padding: 22px 28px 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-card:nth-child(even) {
+      padding-left: 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .skill-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+    }
+
+    .experience-list-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-card:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-dates {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .experience-place {
+      color: var(--faint);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    .experience-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .experience-list {
+      color: var(--muted);
+      padding-left: 18px;
+    }
+
+    .experience-list li {
+      margin-bottom: 8px;
+    }
+
+    .experience-list strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .external-link {
+      color: var(--navy);
+      border-bottom: 1px solid color-mix(in srgb, var(--navy) 40%, transparent);
+    }
+
+    .external-link:hover {
+      border-bottom-color: var(--navy);
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project-card:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-number {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--brass);
+      font-style: italic;
+    }
+
+    .project-type {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .tech-tags,
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+    }
+
+    .tech-tags span,
+    .cert-tags span {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    .tech-tags span::before,
+    .cert-tags span::before {
+      content: "–";
+      color: var(--brass);
+      margin-right: 6px;
+    }
+
+    .project-links {
+      margin-top: 14px;
+    }
+
+    .project-links a {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      color: var(--navy);
+      border-bottom: 1px solid var(--brass);
+      padding-bottom: 2px;
+    }
+
+    .cert-grid,
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .timeline-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cert-card,
+    .timeline-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 22px 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .cert-year,
+    .timeline-meta {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 10px;
+    }
+
+    .cert-card h3,
+    .timeline-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.15rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .cert-card p,
+    .timeline-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: end;
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+
+    .contact-email {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--brass);
+      width: fit-content;
+    }
+
+    .contact-phone {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .social-links,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line-strong);
+      padding: 22px 0 36px;
+      color: var(--faint);
+      font-size: 0.92rem;
+      display: flex;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: 0.6s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (min-width: 1020px) {
+      html {
+        scroll-padding-top: 84px;
+      }
+
+      .section,
+      .hero {
+        scroll-margin-top: 88px;
+      }
+
+      .masthead-bar {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "brand nav actions";
+        min-height: 74px;
+        padding: 0;
+        gap: 28px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .section-heading,
+      .about-grid,
+      .experience-card,
+      .hero-highlights,
+      .skills-grid,
+      .cert-grid,
+      .timeline-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-item + .highlight-item,
+      .stat-card + .stat-card,
+      .skill-card:nth-child(even) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .highlight-item,
+      .stat-card {
+        padding: 16px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .hero-highlights,
+      .stats-row {
+        border-bottom: none;
+      }
+
+      .skill-card:nth-child(even) {
+        padding-right: 0;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .masthead-bar {
+        padding: 10px 0 8px;
+        gap: 6px 12px;
+      }
+
+      .nav-links {
+        gap: 8px 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.78rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 64px 0;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .nav-links {
+        gap: 12px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="container masthead-bar">
+      <a href="#home" class="wordmark">Sheshraj <span>Pawar</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span id="themeIcon">☾</span>
+        </button>
+        <a
+          href="assets/Sheshraj_pawar_Resume.pdf"
+          class="resume-nav-btn"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="container">
+        <p class="hero-kicker reveal">Data Engineer · Data Scientist · AI</p>
+        <h1 class="hero-title reveal">
+          Sheshraj<br />
+          <em>Pawar</em>
+        </h1>
+        <div class="hero-rule reveal"></div>
+        <p class="hero-subtitle reveal">
+          Data Engineer and Scientist with 1.5+ years of experience building scalable data pipelines, machine learning deployments, and AI architectures. I turn raw data into predictive insight and cloud ETL workflows with Python, SQL, and GCP.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="cta-btn primary-btn">View Projects</a>
+          <a
+            href="assets/Sheshraj_pawar_Resume.pdf"
+            class="cta-btn secondary-btn"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Resume
+          </a>
+        </div>
+        <div class="hero-highlights reveal">
+          <div class="highlight-item">
+            <span class="highlight-label">Primary Stack</span>
+            <span class="highlight-value">Python, SQL, GCP, Agentic AI</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Focus</span>
+            <span class="highlight-value">ETL Pipelines, ML, Voice AI</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Experience</span>
+            <span class="highlight-value">1.5+ Years · Data &amp; AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">About</p>
+          <div>
+            <h2>Scalable pipelines, models, and practical AI systems.</h2>
+            <p>
+              Focused on turning enterprise data into reliable analytics and high-performance cloud workflows.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-wrap reveal">
+            <div class="about-image">
+              <img src="assets/Sheshraj_Image.jpeg" alt="Portrait of Sheshraj Pawar" />
+            </div>
+            <p class="edu-badge">B.Tech · AI &amp; Data Science</p>
+          </div>
+
+          <div class="about-copy reveal">
+            <p>
+              I am a Data Engineer and Scientist with 1.5+ years of hands-on experience building robust, scalable data pipelines and deploying ML models. Currently working at <a href="https://amealio.com/" target="_blank" rel="noopener noreferrer" class="external-link">Amealio</a> as a Data Engineer, I architect end-to-end cloud ETL processes on GCP to power enterprise AI initiatives and real-time platform capabilities.
+            </p>
+            <p>
+              My work spans Python, SQL, Agentic AI workflows, speech-to-speech voice engines, deep learning models, containerized deployments with Docker, and automated data quality management.
+            </p>
+            <div class="about-points">
+              <div class="about-pill">Data Engineering</div>
+              <div class="about-pill">ETL Pipelines</div>
+              <div class="about-pill">Agentic AI</div>
+              <div class="about-pill">Voice AI</div>
+              <div class="about-pill">Machine Learning</div>
+              <div class="about-pill">GCP</div>
+            </div>
+            <div class="stats-row">
+              <div class="stat-card">
+                <strong>1.5+</strong>
+                <span>Years of experience</span>
+              </div>
+              <div class="stat-card">
+                <strong>7.94</strong>
+                <span>B.Tech CGPA</span>
+              </div>
+              <div class="stat-card">
+                <strong>2024</strong>
+                <span>Graduated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Skills</p>
+          <div>
+            <h2>A practical stack for data, models, and cloud systems.</h2>
+            <p>Tools used for data engineering, machine learning, and agentic AI architecture.</p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Languages</h3>
+            <p>Python, R, SQL, JavaScript (Node.js)</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>AI &amp; ML Frameworks</h3>
+            <p>TensorFlow, Keras, Scikit-learn, OpenCV, LSTM, Random Forest, Agentic AI, NLP</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Data Engineering &amp; Cloud</h3>
+            <p>Pandas, NumPy, ETL Pipelines, GCP, Docker, MongoDB, MySQL</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Tools &amp; Deployment</h3>
+            <p>Git, REST APIs, Postman, Linux, Containerized Deployments</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Concepts &amp; Architecture</h3>
+            <p>DBMS, Data Structures, Predictive Analytics, Recommendation Systems, Conversational AI</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Voice &amp; Agentic AI</h3>
+            <p>Speech-to-Speech Engines, Self-Learning Agent Workflows, Voice AI Agents</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Experience</p>
+          <div>
+            <h2>Production data engineering and applied AI.</h2>
+          </div>
+        </div>
+
+        <div class="experience-list-wrap">
+          <article class="experience-card reveal">
+            <div>
+              <p class="experience-dates">Jan 2026 – Aug 2026</p>
+              <p class="experience-place">Pune, Maharashtra</p>
+            </div>
+            <div>
+              <h3>
+                Data Engineer ·
+                <a href="https://amealio.com/" target="_blank" rel="noopener noreferrer" class="external-link">Amealio</a>
+              </h3>
+              <ul class="experience-list">
+                <li><strong>Pipeline architecture.</strong> Designed and maintained scalable data pipelines to power real-time platform features and enterprise AI initiatives.</li>
+                <li><strong>Data optimization.</strong> Improved data quality protocols and cloud architecture for reliable advanced analytics.</li>
+                <li><strong>Strategic implementation.</strong> Supported long-term AI work by orchestrating reliable data access and storage on GCP.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div>
+              <p class="experience-dates">Sep 2025 – Jan 2026</p>
+              <p class="experience-place">Pune, Maharashtra</p>
+            </div>
+            <div>
+              <h3>Software Engineer, AI · Askimo.ai Solutions</h3>
+              <ul class="experience-list">
+                <li><strong>Voice AI.</strong> Built custom Voice AI agents with speech-to-speech engines for low-latency conversation.</li>
+                <li><strong>Workflow automation.</strong> Designed self-learning agentic workflows that automated customer journeys and reduced manual support.</li>
+                <li><strong>Backend scaling.</strong> Built high-throughput services in Python and Node.js and managed containerized deployments.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div>
+              <p class="experience-dates">Dec 2024 – Aug 2025</p>
+              <p class="experience-place">Pune, Maharashtra</p>
+            </div>
+            <div>
+              <h3>Junior Data Engineer · NavAdr Solutions</h3>
+              <ul class="experience-list">
+                <li><strong>Predictive analytics.</strong> Engineered end-to-end ML pipelines for churn and project-completion prediction, holding 89–90% accuracy.</li>
+                <li><strong>Recommendation systems.</strong> Developed a skill-gap recommendation engine at 92% accuracy with collaborative filtering, plus automated support-ticket triage.</li>
+                <li><strong>Model optimization.</strong> Refined sales targeting with Random Forest models, reaching a 0.92 F1-score through GridSearchCV tuning.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Projects</p>
+          <div>
+            <h2>Selected work in deep learning, voice AI, and data pipelines.</h2>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div>
+              <span class="project-number">01</span>
+              <span class="project-type">Voice AI</span>
+            </div>
+            <div>
+              <h3>Healthcare Chatbot</h3>
+              <p>
+                LSTM-based conversational model for preliminary symptom detection at 85% accuracy. Inference was 15% faster and diagnostic relevance improved 25% through tuning and language parsing.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>LSTM</span>
+                <span>NLP</span>
+                <span>Voice AI</span>
+                <span>Deep Learning</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/sheshrajpawar" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <span class="project-number">02</span>
+              <span class="project-type">Time Series</span>
+            </div>
+            <div>
+              <h3>Human Activity Recognition</h3>
+              <p>
+                Time-series classification with LSTM at 95% accuracy across distinct activities. Pipeline work improved processing speed by 40% and stability by 30%.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>Time-Series</span>
+                <span>LSTM</span>
+                <span>Deep Learning</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/sheshrajpawar" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <span class="project-number">03</span>
+              <span class="project-type">Agentic AI</span>
+            </div>
+            <div>
+              <h3>Self-Learning Agentic Workflows</h3>
+              <p>
+                Autonomous workflows using speech-to-speech engines for real-time customer journeys, backed by containerized high-throughput services.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>Node.js</span>
+                <span>Docker</span>
+                <span>S2S Engines</span>
+                <span>Agentic AI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/sheshrajpawar" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <span class="project-number">04</span>
+              <span class="project-type">Data Science</span>
+            </div>
+            <div>
+              <h3>Churn &amp; Skill-Gap Recommender</h3>
+              <p>
+                ML pipelines at 90% churn-prediction accuracy and a 92% collaborative-filtering engine for skill-gap recommendations and ticket triage.
+              </p>
+              <div class="tech-tags">
+                <span>Python</span>
+                <span>Scikit-learn</span>
+                <span>Random Forest</span>
+                <span>ETL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/sheshrajpawar" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Study</p>
+          <div>
+            <h2>Certifications in generative AI, machine learning, and IoT.</h2>
+          </div>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card reveal">
+            <p class="cert-year">Microsoft</p>
+            <h3>Career Essentials in Generative AI</h3>
+            <p>Microsoft &amp; LinkedIn Learning</p>
+            <div class="cert-tags">
+              <span>Gen AI</span>
+              <span>LLMs</span>
+              <span>Prompting</span>
+            </div>
+          </article>
+          <article class="cert-card reveal">
+            <p class="cert-year">LearnBay</p>
+            <h3>ML for Data Science</h3>
+            <p>LearnBay Professional Certification</p>
+            <div class="cert-tags">
+              <span>Machine Learning</span>
+              <span>Scikit-learn</span>
+              <span>Analytics</span>
+            </div>
+          </article>
+          <article class="cert-card reveal">
+            <p class="cert-year">NPTEL</p>
+            <h3>Internet of Things</h3>
+            <p>NPTEL / IIT Initiative</p>
+            <div class="cert-tags">
+              <span>IoT</span>
+              <span>Sensors</span>
+              <span>Distributed Data</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Education</p>
+          <div>
+            <h2>A foundation in artificial intelligence and data science.</h2>
+          </div>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card reveal">
+            <p class="timeline-meta">Jul 2021 – Jun 2024</p>
+            <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+            <p>CSMSS Chh. Shahu College of Engineering, Aurangabad · CGPA 7.94/10</p>
+          </article>
+          <article class="timeline-card reveal">
+            <p class="timeline-meta">Coursework</p>
+            <h3>AI, Deep Learning &amp; Cloud ETL</h3>
+            <p>
+              Machine learning, statistical analysis, database management systems, and advanced data structures.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Contact</p>
+          <div>
+            <h2>Open to data engineering, data science, and AI roles.</h2>
+            <p>Data Engineer, Data Scientist, Machine Learning Engineer, and AI Engineer.</p>
+          </div>
+        </div>
+
+        <div class="contact-layout reveal">
+          <div>
+            <a class="contact-email" href="mailto:sheshp2707@gmail.com">sheshp2707@gmail.com</a>
+            <span class="contact-phone">+91 96371 33117 · Pune, Maharashtra, India</span>
+            <div class="social-links">
+              <a href="https://github.com/sheshrajpawar" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+              <a href="https://www.linkedin.com/in/sheshrajpawar" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a
+              href="assets/Sheshraj_pawar_Resume.pdf"
+              class="cta-btn primary-btn"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Sheshraj Pawar</p>
+      <p>Data Engineer &amp; Scientist · Pune</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const root = document.documentElement;
+
+    function setTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+      localStorage.setItem("theme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = root.getAttribute("data-theme");
+      setTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
